@@ -1,9 +1,36 @@
-const express = require('express')
-const app = express()
- 
-app.get('/registration', function (req, res) {
-  console.log("sending Hello")
-  res.send('Hello')
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser')
+
+// Create global app object
+const app = express();
+
+// import admin and Registered routes
+const adminRoutes = require('./routes/admin')
+const RegisteredRoutes = require('./routes/registered');
+// const path = require('path/posix');
+
+// call body-parser and register a middleware by yielding with urlencoded
+// pass an option to be able to parse non-default feature 
+app.use(bodyParser.urlencoded({extended: false}));
+
+// serve static files
+// app.use(express.static(path.join(__dirname, 'web')));
+
+// call other routes and filter paths
+app.use('/admin', adminRoutes);
+app.use(RegisteredRoutes);
+
+// handling 404 Error Page
+app.use((req, res, next) => {
+  res.status(404).send('Page not Found')
 })
- 
-app.listen(3000)
+
+// Connect to db
+// mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true })
+
+// start a server
+// const server = http.createServer(app);
+// server.listen(3000) instead of these two line and require('http')
+app.listen(7000);
+

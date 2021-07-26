@@ -61,7 +61,7 @@ const TableBody = (props) => {
     return <tbody>{rows}</tbody>
 }
 
-class Table extends Component {
+class Registered extends Component {
   render() {
     // we can access all props through this.props. 
     // We're only passing one props through, characterData,
@@ -69,13 +69,17 @@ class Table extends Component {
     // const {characterData} = this.props
     
     return (
-      <table>
-        <TableHeader />
-        <TableBody characterData={characters} />
-        <TableBody characterData={characters2} />
-      </table>
+      <div id='registered'>
+        <h1>Successfully registered!</h1>
+      </div>
+     
+      // <table>
+      //   <TableHeader />
+      //   <TableBody characterData={characters} />
+      //   <TableBody characterData={characters2} />
+      // </table>
     )
   }
 }
 
-export default Table
+export default Registered;
