@@ -69,7 +69,7 @@ class Registered extends Component {
     // const {characterData} = this.props
     
     return (
-      <div id='registered'>
+      <div id='about'>
         <h1>Successfully registered!</h1>
       </div>
      

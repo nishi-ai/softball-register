@@ -1,8 +1,9 @@
 import './App.css';
 import React, {Component} from 'react';
 import { Route, Switch } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
-import AddPlayerForm from './components/AddPlayerFrom';
+import AddPlayerForm from './components/AddPlayerForm';
 import Registered from './components/Registered';
 
 
@@ -16,19 +17,15 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route path='/' exact>
-            <header className="App-header">
-              <Header data={data.main}/>
-              <button onClick={() => {
-              console.log("-----click")
-              fetch()
-              }}>my button</button>
-            </header>
-            <AddPlayerForm />
-          </Route>
-          <Route path='/registered'>
-            <Registered />
-          </Route>
+          <header className="App-header">
+            <Route path='/' exact>
+              {/* <Header data={data.main}/> */}
+              <AddPlayerForm />
+            </Route>
+            <Route path='/registered'>
+              <Registered />
+            </Route>
+          </header> 
         </Switch>
       </div>
     );
