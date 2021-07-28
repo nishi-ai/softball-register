@@ -1,9 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 
 // Create global app object
 const app = express();
+
+app.use(cors());
 
 // import admin and Registered routes
 const adminRoutes = require('./routes/admin')
@@ -13,6 +16,7 @@ const RegisteredRoutes = require('./routes/registered');
 // call body-parser and register a middleware by yielding with urlencoded
 // pass an option to be able to parse non-default feature 
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json())
 
 // serve static files
 // app.use(express.static(path.join(__dirname, 'web')));
@@ -27,7 +31,7 @@ app.use((req, res, next) => {
 })
 
 // Connect to db
-// mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true })
 
 // start a server
 // const server = http.createServer(app);

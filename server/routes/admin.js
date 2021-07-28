@@ -17,10 +17,10 @@ router.get('/registration', function (req, res) {
     res.sendFile(path.join(__dirname, '../', '../', 'web', 'public', 'index.html'));
 });
 
-// /admin/registered => POST
+// /admin/registration => POST
 router.post('/registration', (req, res, next) => {
     console.log(req.body);
-    res.redirect('/')
+    // res.redirect('/')
 })
 
 module.exports = router;

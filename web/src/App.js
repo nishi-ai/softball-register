@@ -2,16 +2,12 @@ import './App.css';
 import React, {Component} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './components/Header';
-import AddPlayerForm from './components/AddPlayerForm';
+// import Header from './components/Header';
 import Registered from './components/Registered';
+import NewPlayerPage from './pages/NewPlayerPage';
 
 
 //files for understanding components, state and props
-
-// import data from './resumeData.json';
-const data = require('./resumeData.json');
-
 class App extends Component {
   render() {
     return (
@@ -20,7 +16,7 @@ class App extends Component {
           <header className="App-header">
             <Route path='/' exact>
               {/* <Header data={data.main}/> */}
-              <AddPlayerForm />
+              <NewPlayerPage />
             </Route>
             <Route path='/registered'>
               <Registered />

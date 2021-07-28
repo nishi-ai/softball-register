@@ -1,9 +1,9 @@
 import { React } from 'react';
 // directly access to reference cue DOM elements
 import { useRef } from 'react';
-import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 
-function AddPlayerForm() {
+function AddPlayerForm(props) {
     const nameInputRef = useRef();
     const emailInputRef = useRef();
 
@@ -20,7 +20,9 @@ function AddPlayerForm() {
             email: enteredEmail
         };
     
-        console.log('playerData', playerData);
+        // console.log('playerData', playerData);
+        // forward the data to a parent component, where this AddPlayerForm Component is used
+        props.onAddPlayer(playerData);
     }
         return (
             <Form onSubmit={submitHandler}>
