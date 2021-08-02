@@ -2,7 +2,6 @@ import './App.css';
 import React, {Component} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Header from './components/Header';
 import Registered from './components/Registered';
 import NewPlayerPage from './pages/NewPlayerPage';
 
@@ -14,8 +13,7 @@ class App extends Component {
       <div className="App">
         <Switch>
           <header className="App-header">
-            <Route path='/' exact>
-              {/* <Header data={data.main}/> */}
+            <Route path='/player/registration' exact>
               <NewPlayerPage />
             </Route>
             <Route path='/registered'>

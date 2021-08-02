@@ -1,8 +1,4 @@
-const path = require('path')
-
 const express = require('express');
-
-// const rootDir = require('../util.path')
 
 const router = express.Router();
 
@@ -13,14 +9,16 @@ router.use((req, res, next) => {
   
 // /admin/registration => GET
 router.get('/registration', function (req, res) {
-    console.log("sending Hello")
-    res.sendFile(path.join(__dirname, '../', '../', 'web', 'public', 'index.html'));
+    console.log("GET: sending Hello")
 });
 
 // /admin/registration => POST
 router.post('/registration', (req, res, next) => {
+    console.log("POST:")
     console.log(req.body);
-    // res.redirect('/')
+    res.status(200);
+    // need to return something json because frontend expects to receive `json.
+    res.send({});
 })
 
 module.exports = router;

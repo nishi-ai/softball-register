@@ -29,11 +29,11 @@ function AddPlayerForm(props) {
                 
                 <Form.Group className="mb-3">
                     <Form.Label htmlFor='playername'>Name</Form.Label>
-                    <Form.Control type="name" placeholder="taro" ref={nameInputRef} />
+                    <Form.Control required type="name" placeholder="taro" ref={nameInputRef} />
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label htmlFor='email'>Email</Form.Label>
-                    <Form.Control type="email" placeholder="name@example.com" ref={emailInputRef} />
+                    <Form.Control required type="email" placeholder="name@example.com" ref={emailInputRef} />
                 </Form.Group>
                 
                 <Button variant="outline-primary" type="submit">Register</Button>{' '}

@@ -60,9 +60,8 @@ header .social li a { color: #fff; }
 header .social li a:hover { color: #11ABB0; }
 
 /* Registered */
-#about {
+#registered {
    position: relative;
-   background: #2B2B2B;
    height: 100%;
    padding: 10px;
    margin: 100px;

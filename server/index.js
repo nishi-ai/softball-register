@@ -6,12 +6,11 @@ const bodyParser = require('body-parser')
 // Create global app object
 const app = express();
 
+// Enable All CORS Requests (issue from post request from web) 
 app.use(cors());
 
-// import admin and Registered routes
-const adminRoutes = require('./routes/admin')
-const RegisteredRoutes = require('./routes/registered');
-// const path = require('path/posix');
+// import player routes
+const playerRoutes = require('./routes/player')
 
 // call body-parser and register a middleware by yielding with urlencoded
 // pass an option to be able to parse non-default feature 
@@ -22,13 +21,12 @@ app.use(bodyParser.json())
 // app.use(express.static(path.join(__dirname, 'web')));
 
 // call other routes and filter paths
-app.use('/admin', adminRoutes);
-app.use(RegisteredRoutes);
+app.use('/player', playerRoutes);
 
-// handling 404 Error Page
-app.use((req, res, next) => {
-  res.status(404).send('Page not Found')
-})
+// handling 404 Error Page, no need this does on front end
+// app.use((req, res, next) => {
+//   res.status(404).send('Page not Found')
+// })
 
 // Connect to db
 mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true })
