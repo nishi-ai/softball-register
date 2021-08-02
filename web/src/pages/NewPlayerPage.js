@@ -1,5 +1,4 @@
 import AddPlayerForm from "../components/AddPlayerForm";
-import { Alert } from 'react-bootstrap';
 
 function NewPlayerPage() {
     // add async to be able to switch the page on the right timing after registration
@@ -23,23 +22,22 @@ function NewPlayerPage() {
                         'Content-Type': 'application/json'
                     }
                 }
-            );
+            )
+            // handle the response, to get an access to the response data 
             const response = await fetchResult.json();
+            // console loged data
             console.log('response json',response);
             if (fetchResult.status === 200) {
-                console.log('successful');
                 window.location = "/registered"
+                console.log('successful registered');
             } else {
-                console.log('NETWORK CALL FAILED (payload was not valid or something)');
+                // payload was not valid or something
+                alert('Check your name or email again');
             }        
         } catch (error) {
             // The usage of fetch was something wrong OR json data from server was invalid
             alert('Ups! Something went wrong! Ask Bright!');
-            <Alert variant='danger'>
-                Ups! Something went wrong! Ask Bright!
-            </Alert>
         }
-       
     }
     return (
         <section>

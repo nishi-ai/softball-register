@@ -9,11 +9,12 @@ import NewPlayerPage from './pages/NewPlayerPage';
 //files for understanding components, state and props
 class App extends Component {
   render() {
+    // Route path doesn't need to align with the back-end route
     return (
       <div className="App">
         <Switch>
           <header className="App-header">
-            <Route path='/player/registration' exact>
+            <Route path='/' exact>
               <NewPlayerPage />
             </Route>
             <Route path='/registered'>

@@ -13,7 +13,7 @@ function AddPlayerForm(props) {
         
         const enteredName = nameInputRef.current.value;
         const enteredEmail = emailInputRef.current.value;
-    
+     
         // Rest API to send server & DB
         const playerData = {
             name: enteredName,
@@ -29,11 +29,11 @@ function AddPlayerForm(props) {
                 
                 <Form.Group className="mb-3">
                     <Form.Label htmlFor='playername'>Name</Form.Label>
-                    <Form.Control required type="name" placeholder="taro" ref={nameInputRef} />
+                    <Form.Control type="name" placeholder="taro" ref={nameInputRef} />
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label htmlFor='email'>Email</Form.Label>
-                    <Form.Control required type="email" placeholder="name@example.com" ref={emailInputRef} />
+                    <Form.Control type="email" placeholder="name@example.com" ref={emailInputRef} />
                 </Form.Group>
                 
                 <Button variant="outline-primary" type="submit">Register</Button>{' '}
