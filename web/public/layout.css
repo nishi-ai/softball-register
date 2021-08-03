@@ -11,10 +11,10 @@ body { background: #0f0f0f; }
 }
 
 .profile-pic {
-   border-radius: 50%;
+   border-radius: 5%;
    padding: 40px;
-   width: 200px;
-   height: 200px;
+   width: 960px;
+   height: 400px;
 }
 
 /* header banner text */
@@ -59,10 +59,9 @@ header .social li {
 header .social li a { color: #fff; }
 header .social li a:hover { color: #11ABB0; }
 
-/* About */
-#about {
+/* Registered */
+#registered {
    position: relative;
-   background: #2B2B2B;
    height: 100%;
    padding: 10px;
    margin: 100px;
